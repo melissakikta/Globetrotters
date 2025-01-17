@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+:root {
+  --background: #2E1C2B;
+  --dark: #050404;
+  --mid: #4A1942;
+  --light: #893168;
+  --lightest: #EAEAEA;
+}
+
+.navbar {
+  background: var(--background);
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: var(--lightest);
+  font-family: lato , sans-serif;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin: 5px;
+  line-height: 3;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  background-image: linear-gradient(270deg, var(--background) 0%, var(--mid) 100%);
+  background-size: 100% 0.2em;
+  background-position: bottom;
+  transition: all 0.25s ease-in;
+  font-size: 1.4rem;
+}
+
+.navbar a:hover {
+  background-size: 100% 100%;
+  color: var(--background);
+}
+
+.navbar a:last-child {
+  margin-right: 0;
+}
+
+.navbar a:active {
+  background-size: 100% 100%;
+  color: var(--background);
+}
+
+.mx-3 {
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: center;
+}
