@@ -29,7 +29,7 @@ const BucketList = () => {
    
     setErrors(tempErrors);
 
-    // Submit if no errors
+    // Submit if no errors. 
     if (Object.keys(tempErrors).length === 0) {
       setSubmittedData(formData);
       alert('Your Item has been Stored!');
