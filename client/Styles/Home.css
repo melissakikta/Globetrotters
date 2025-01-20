@@ -1,0 +1,155 @@
+:root {
+  --background: #2E1C2B;
+  --dark: #050404;
+  --mid: #4A1942;
+  --light: #893168;
+  --lightest: #EAEAEA;
+}
+
+.home {
+  padding-top: 140px; /* Accounts for fixed header and navbar height */
+  padding-bottom: 60px; /* Accounts for footer height */
+  background: var(--background);
+  justify-content: center;
+  text-align: center; /* Centers the title */
+  font-family: lato, sans-serif;
+  color: var(--lightest);
+  position: relative;
+  z-index: 1; /* Ensure portfolio stays behind the footer */
+}
+
+.home h1 {
+  font-family: 'Abril Fatface', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: var(--lightest);
+}
+
+.page-section {
+  text-align: center; /* Centers all content inside */
+}
+
+.page-section > h1 {
+  flex: 0 0 20%;
+  text-align: center;
+  padding-right: 15px;
+  border-right: 4px solid var(--primary);
+  font-size: 3rem;
+  line-height: 1.1;
+  display: block;
+}
+
+.page-section > div {
+  flex: 0 0 77%;
+}
+
+.page-section p {
+  margin-bottom: 20px;
+}
+
+
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid layout */
+  gap: 20px; /* Spacing between items */
+  padding: 20px;
+  justify-content: center; /* Centers the grid horizontally */
+  margin: 0 auto; /* Centers the container itself */
+  z-index: 0; /* Keeps the flex items behind footer */
+}
+
+.flex-item {
+  position: relative;
+  border-radius: 10px; /* Optional rounded corners */
+  overflow: hidden; /* Prevents content overflow */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.8s;
+  margin: 0 auto; /* Centers items inside each grid cell */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px; /* Consistent height for all items */
+  width: 100%; /* Ensure grid cells fill equally */
+  padding: 10px; /* Padding for spacing */
+}
+
+.flex-item:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Background overlay with blur effect */
+.flex-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.flex-item h2 {
+  display: flex; /* Align title and icon horizontally */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  gap: 10px; /* Add spacing between elements */
+  margin-top: 10px; /* Space above the title */
+}
+
+/* Text on the image */
+.flex-item h2,
+.flex-item p {
+  position: relative;
+  z-index: 2;
+  color: var(--lightest);
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Add links inside flex items */
+.flex-item a {
+  text-decoration: none;
+  color: var(--lightest);
+}
+
+.flex-item a img,
+.flex-item a i {
+  position: relative; /* Ensure it respects z-index */
+  z-index: 3; /* Place above the overlay */
+  width: 40px; /* Adjust size */
+  height: auto;
+  margin-top: 10px; /* Add spacing */
+}
+
+
+.flex-item p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.country-image {
+  width: 100%; /* Make images fill their container width */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+  border-radius: 10px; /* Match container's border-radius */
+}
+
+/* media queries for a max-width of 980px */
+@media screen and (max-width: 768px) {
+  .flex-container {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center; /* Ensure it remains centered */
+    margin: 0 auto;
+    }
+
+  .home h1 {
+    font-size: 2rem; /* Smaller title size */
+  }
+
+  .flex-item {
+    max-width: 90%; /* Adjust width for smaller screens */
+  }
+}
