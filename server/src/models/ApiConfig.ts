@@ -8,3 +8,4 @@ export interface ApiConfig {
     baseUrl: "https://v6.exchangerate-api.com/"
   };
   
+  
