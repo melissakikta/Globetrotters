@@ -1,6 +1,7 @@
 import axios from "axios";
 import { apiConfig } from "./ApiConfig";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 export interface ExchangeRateResponse {
   base: string; 
