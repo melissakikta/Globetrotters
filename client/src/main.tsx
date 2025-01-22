@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
@@ -10,7 +11,7 @@ import FrancePage from './pages/France.tsx';
 import GermanyPage from './pages/Germany.tsx';  
 import PolandPage from './pages/Poland.tsx';
 import SpainPage from './pages/Spain.tsx';
-import ExchangePage from './pages/Exchange.tsx';
+import CurrencyExchangePage from './pages/Exchange.tsx';
 import Bucketlist from './pages/Bucketlist.tsx';
 
 const router = createBrowserRouter([
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/Exchange',
-        element: <ExchangePage />,
+        element: <CurrencyExchangePage />,
       },
       {
         path: '/Bucketlist',
