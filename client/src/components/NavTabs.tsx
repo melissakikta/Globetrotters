@@ -21,20 +21,19 @@ function NavTabs({ currentPage, handlePageChange }) {
           // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'Exchange' ? 'nav-link active' : 'nav-link'}
         >
-          <h2>Exchange</h2>
+          <h2>Exchange Rates</h2>
         </a>
       </li>
       <li className="nav-item">
         <a
-          href="#BucketList"
-          onClick={() => handlePageChange('BucketList')}
+          href="#Bucketlist"
+          onClick={() => handlePageChange('Buketlist')}
           // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'Poland' ? 'nav-link active' : 'nav-link'}
+          className={currentPage === 'Bucketlist' ? 'nav-link active' : 'nav-link'}
         >
           <h2>Bucket List</h2>
         </a>
-</li>
-
+      </li>
     </ul>
   );
 }
