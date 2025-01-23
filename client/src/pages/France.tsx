@@ -1,8 +1,8 @@
 import '../styles/Country.css';
 
 //Import images
-import FEntertainment from '../assets/images/FranceEntertainment.jpg';
-import FFood from '../assets/images/FranceFood.jpg';
+import FEntertainment from '../../assets/images/FranceEntertainment.jpg';
+import FFood from '../../assets/images/FranceFood.jpg';
 
 //function to create the About Me section
 function FrancePage() {

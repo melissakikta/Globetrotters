@@ -1,9 +1,9 @@
 import '../styles/Country.css';
 
 //Import images
-import '../assets/images/GermanyEntertainment.webp';
-import '../assets/images/GermanyGermanyFood.png';
-import '../assets/images/gm-train.jpeg';
+import '../../assets/images/GermanyEntertainment.webp';
+import '../../assets/images/GermanyGermanyFood.png';
+import '../../assets/images/gm-train.jpeg';
 
 import React, { useState, useEffect } from "react";
 import { TrainSchedulesService, TrainSchedule } from "../../../server/src/models/TrainTimes";
