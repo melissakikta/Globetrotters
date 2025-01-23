@@ -1,8 +1,8 @@
 import '../styles/Country.css';
 
 //Import images
-import SEntertainment from '../assets/images/SpainEntertainment.jpg';
-import SFood from '../assets/images/SpainFood.webp';
+import SEntertainment from '../../assets/images/SpainEntertainment.jpg';
+import SFood from '../../assets/images/SpainFood.webp';
 
 //function to create the About Me section
 function SpainPage() {

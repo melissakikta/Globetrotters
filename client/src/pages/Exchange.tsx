@@ -2,8 +2,8 @@ import '../styles/Country.css';
 import React, { useState, useEffect } from "react";
 //Import images
 
-import '../assets/images/exchange.jpeg';
-import '../assets/images/exchange2.png';
+import '../../assets/images/exchange.jpeg';
+import '../../assets/images/exchange2.png';
 import { CurrencyExchangeService } from '../../../server/src/models/CurrecyExchage';
 
 

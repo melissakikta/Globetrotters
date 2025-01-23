@@ -2,8 +2,8 @@ import '../styles/Country.css';
 
 //Import images
 
-import EEntertainment from '../assets/images/EnglandEntertainment.jpg';
-import EFood from '../assets/images/EnglandFood.avif';
+import EEntertainment from '../../assets/images/EnglandEntertainment.jpg';
+import EFood from '../../assets/images/EnglandFood.avif';
 
 //function to create the About Me section
 function EnglandPage() {
