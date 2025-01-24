@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/NavTabs.css';
 // Passing the currentPage and handlePageChange method from our parent component (PortfolioContainer) to our child component (NavTabs)
 function NavTabs({ currentPage, handlePageChange }) {
