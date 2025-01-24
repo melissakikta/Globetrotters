@@ -5,7 +5,7 @@ const BucketList = require('./bucketListModel');
 const auth = require('./middleware/authenticate');
 
 // POST: Create new bucket list item
-router.post('/bucketlist', authenticate, async (req, res) => {
+router.post('/bucketlist', auth, async (req, res) => {
   const { country, item } = req.body;
   const userId = req.user.id; // Get user ID from the authenticated JWT token
 
@@ -18,7 +18,7 @@ router.post('/bucketlist', authenticate, async (req, res) => {
 });
 
 // GET: Get all bucket list items for a user
-router.get('/bucketlist', authenticate, async (req, res) => {
+router.get('/bucketlist', auth, async (req, res) => {
   const userId = req.user.id; // Get user ID from the authenticated JWT token
 
   try {
@@ -30,7 +30,7 @@ router.get('/bucketlist', authenticate, async (req, res) => {
 });
 
 // PUT: Update a bucket list item
-router.put('/bucketlist/:id', authenticate, async (req, res) => {
+router.put('/bucketlist/:id', auth, async (req, res) => {
   const { country, item } = req.body;
   const { id } = req.params;
 
@@ -43,7 +43,7 @@ router.put('/bucketlist/:id', authenticate, async (req, res) => {
 });
 
 // DELETE: Delete a bucket list item
-router.delete('/bucketlist/:id', authenticate, async (req, res) => {
+router.delete('/bucketlist/:id', auth, async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -54,4 +54,4 @@ router.delete('/bucketlist/:id', authenticate, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
