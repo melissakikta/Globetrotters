@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { registerUser } from "./controllers/userController";
+import { registerUser } from "./src/controllers/userController";
 
 dotenv.config();
 
