@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import Home from '../pages/Home';
 import ExchangePage from '../pages/Exchange';
-import Bucketlist from '../pages/Bucketlist';
+import Bucketlist from '../pages/BucketList';
 
 
 
