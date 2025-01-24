@@ -1,6 +1,8 @@
 //import navbar style sheet
 import '../styles/Navbar.css';
+import React from 'react';
 import { useState } from 'react';
+import NavTabs from './NavTabs';
 
 import Home from '../pages/Home';
 import ExchangePage from '../pages/Exchange';
