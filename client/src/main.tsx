@@ -4,15 +4,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
 import App from './App.tsx';
-import ErrorPage from './pages/ErrorPage.tsx';
-import Home from './pages/Home.tsx';
-import EnglandPage from './pages/England.tsx';
-import FrancePage from './pages/France.tsx';
-import GermanyPage from './pages/Germany.tsx';  
-import PolandPage from './pages/Poland.tsx';
-import SpainPage from './pages/Spain.tsx';
-import CurrencyExchangePage from './pages/Exchange.tsx';
-import Bucketlist from './pages/Bucketlist.tsx';
+import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home';
+import EnglandPage from './pages/England';
+import FrancePage from './pages/France';
+import GermanyPage from './pages/Germany';  
+import PolandPage from './pages/Poland';
+import SpainPage from './pages/Spain';
+import CurrencyExchangePage from './pages/Exchange';
+import Bucketlist from './pages/Bucketlist';
 
 const router = createBrowserRouter([
   {
