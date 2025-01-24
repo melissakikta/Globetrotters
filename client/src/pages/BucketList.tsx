@@ -87,9 +87,8 @@ const BucketList: React.FC = () => {
 
         const newItem = await response.json();
         setBucketList((prevList) => [...prevList, newItem]);
-        alert("Your Item has been Stored!");
+        setSubmittedData(newItem); // Store the last submitted data
         setFormData({ country: "", item: "" });
-        setSubmittedData(newItem);
       } catch (error) {
         console.error("Error submitting bucket list item:", error);
       }
@@ -146,6 +145,18 @@ const BucketList: React.FC = () => {
 
                 <button type="submit">Add to Bucket List</button>
               </form>
+
+              {submittedData && (
+                <div className="submitted-data">
+                  <h2>Last Submitted Item:</h2>
+                  <p>
+                    <strong>Country:</strong> {submittedData.country}
+                  </p>
+                  <p>
+                    <strong>Item:</strong> {submittedData.item}
+                  </p>
+                </div>
+              )}
 
               <h2>Your Bucket List</h2>
               <ul>
