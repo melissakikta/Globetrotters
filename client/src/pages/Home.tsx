@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '../styles/Home.css';
 
 import country1 from '../../assets/images/uk-flag.gif';

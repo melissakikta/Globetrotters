@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login } from "../services/authService";
+import { login } from "../utils/authService";
 
 const LoginPage: React.FC = () => {
   const [username, setUserName] = useState("");

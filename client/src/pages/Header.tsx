@@ -1,3 +1,5 @@
+import React from 'react';
+
 //import header style sheet
 import '../styles/Header.css';
 
