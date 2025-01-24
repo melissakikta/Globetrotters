@@ -1,4 +1,4 @@
-const db = require('./db'); // Make sure you export your database connection
+import db from './db'; // Make sure you export your database connection
 
 const BucketListModel = {
   create: (userId, country, item) => {
@@ -25,3 +25,5 @@ const BucketListModel = {
 };
 
 module.exports = BucketListModel;
+
+export default BucketListModel;
