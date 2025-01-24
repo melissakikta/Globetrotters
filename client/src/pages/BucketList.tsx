@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import bucketListImage from '../../assets/images/bucketlist.jpeg'; // Corrected image import
 
 const BucketList: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{ country :string; item: string }>({
     country: "",
     item: "",
   });
-  const [errors, setErrors] = useState<any>({});
-  const [submittedData, setSubmittedData] = useState<any | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submittedData, setSubmittedData] = useState<{ country: string; item: string } | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false); // Track if user is logged in
 
   // Check if the user is logged in by looking for a token in localStorage
@@ -31,7 +31,7 @@ const BucketList: React.FC = () => {
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    let tempErrors: any = {};
+    const tempErrors: Record<string, string> = {};
 
     // Check for empty fields
     if (!formData.country.trim()) tempErrors.country = "Country is required.";

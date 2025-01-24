@@ -1,3 +1,5 @@
+import React from 'react';
+//Import styles
 import '../styles/Country.css';
 
 //Import images

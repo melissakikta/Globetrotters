@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import FormErrors from '../interfaces/Form';
 
 const BucketList = () => {
   const [formData, setFormData] = useState({
     country: '',
     item: '',
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submittedData, setSubmittedData] = useState(null);
 
   // Handle input change
