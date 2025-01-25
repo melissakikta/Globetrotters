@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import bucketListImage from "../../assets/images/bucketlist.jpeg";
+import "../styles/BucketList.css";
 
 const BucketList: React.FC = () => {
   const [formData, setFormData] = useState<{ country: string; item: string }>({
@@ -10,7 +11,7 @@ const BucketList: React.FC = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submittedData, setSubmittedData] = useState<{ country: string; item: string } | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [bucketList, setBucketList] = useState<Array<{ country: string; item: string }>>([]);
+  const [bucketList, setBucketList] = useState<Array<{ id: number; country: string; item: string }>>([]);
 
   // Check if the user is logged in by looking for a token in localStorage
   useEffect(() => {
@@ -95,6 +96,36 @@ const BucketList: React.FC = () => {
     }
   };
 
+  const handleDelete = async (id: number) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+    if (!confirmDelete) return;
+    
+    try {
+      const token = localStorage.getItem("authToken");
+  
+      // Send DELETE request to the backend
+      const response = await fetch(`./api/bucketlist/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error deleting bucket list item: ${response.statusText}`);
+      }
+  
+      const deletedItem = await response.json();
+      console.log("Deleted item:", deletedItem);
+  
+      // Remove the item from the state (frontend)
+      setBucketList((prevList) => prevList.filter((item) => item.id !== id));
+    } catch (error) {
+      console.error("Error deleting bucket list item:", error);
+    }
+  };
+
   return (
     <section className="country">
       <div className="country-container">
@@ -159,13 +190,25 @@ const BucketList: React.FC = () => {
               )}
 
               <h2>Your Bucket List</h2>
-              <ul>
-                {bucketList.map((item, index) => (
-                  <li key={index}>
-                    <strong>{item.country}:</strong> {item.item}
-                  </li>
-                ))}
-              </ul>
+              <table className="bucketlist-table">
+                <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Item</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bucketList.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.country}</td>
+                      <td>{item.item}</td>
+                      <td>
+                        <button onClick={() => handleDelete(item.id)}>Delete</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>

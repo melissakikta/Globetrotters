@@ -1,42 +1,52 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FormErrors, FormData } from '../interfaces/Form';
 
-const BucketList = () => {
+const BucketList: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
+    id: 0,
     country: '',
     item: '',
   });
-  const [errors, setErrors] = useState<FormErrors>({ country: '', item: '' });
+
+  const [errors, setErrors] = useState<FormErrors>({
+    id: 0,
+    country: '',
+    item: '',
+  });
+
   const [submittedData, setSubmittedData] = useState<FormData | null>(null);
 
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const tempErrors: FormErrors = { country: '', item: '' };
 
-    // Check for empty fields
-    if (!formData.country.trim()) tempErrors.country = 'Country is required.';
-    if (!formData.item.trim()) tempErrors.item = 'Please provide one item.';
+    const tempErrors: FormErrors = { id: 0, country: '', item: '' };
 
-   
+    // Validate fields
+    if (!formData.country.trim()) {
+      tempErrors.country = 'Country is required.';
+    }
+    if (!formData.item.trim()) {
+      tempErrors.item = 'Please provide one item.';
+    }
+
     setErrors(tempErrors);
 
-    // Submit if no errors. 
-    if (Object.keys(tempErrors).length === 0) {
+    // Submit if no errors exist
+    if (!tempErrors.country && !tempErrors.item) {
       setSubmittedData(formData);
       alert('Your Item has been Stored!');
-      setFormData({ country: '', item: '' });
-      setErrors({ country: '', item: '' });
+      setFormData({ id: 0, country: '', item: '' });
+      setErrors({ id: 0, country: '', item: '' });
     }
   };
 
@@ -89,3 +99,4 @@ const BucketList = () => {
 };
 
 export default BucketList;
+

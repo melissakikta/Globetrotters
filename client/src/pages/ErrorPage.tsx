@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ErrorPage = () => {
+const ErrorPage: React.FC = () => {
   return (
     <section>
       <h1>404: Page Not Found</h1>

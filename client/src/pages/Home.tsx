@@ -10,7 +10,7 @@ import country5 from '../../assets/images/sp-flag.gif';
 
 
 //function to create the About Me section
-function Home() {
+const Home: React.FC = () => {
   return (
     <section className="home">
       <div className="page-section">

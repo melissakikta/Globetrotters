@@ -19,7 +19,7 @@ Users can select a country and navigate to a page for each country. Users can al
 
 <u><strong>Home Page</strong></u>
 
-![Navigation](./assets/images/search.png)
+![Navigation](./client/assets/images/globe.png)
 
 
 <u><strong>Country Page</strong></u>
@@ -57,8 +57,6 @@ Back to [Table-of-Contents](#🚀-table-of-contents)
 
 
 ## 🫱🏽‍🫲🏾 Credits
-***********PostgreSQL**********************
-
 This applications requires the use of <strong>vite</strong>. Please find information regarding its use with the link below.
 
 [Vite](https://vite.dev/guide/)
@@ -74,7 +72,6 @@ Back to [Table-of-Contents](#🚀-table-of-contents)
 
 ## 🗨️ Contact Our Team
 
-  <strong>Email Joe:</strong> []()
   <strong>Email Ivan:</strong> []()
   <strong>Email Missy:</strong> [MelissaKikta2025@u.northwestern.edu](mailto:MelissaKikta@u.northwestern.edu)
   <strong>Email Paige:</strong> []()

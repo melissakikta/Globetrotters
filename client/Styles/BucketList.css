@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #8ECAE6;
+  --dark: #023047;
+  --mid: #219EBC;
+  --light: #FB8500;
+  --lightest: #FFB703;
+}
+
+.country {
+  background: var(--background);
+  padding: 20px;
+  margin-top: 140px; /* Accounts for the header and navbar height */
+  margin-bottom: 60px; /* Accounts for the footer height */
+  font-family: abril_fatface, sans-serif;
+
+}
+
+.country-container {
+  display: flex; /* Enable flexbox layout */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  gap: 20px; /* Space between image and text */
+}
+
+.country-image {
+  width: 25%; /* Adjust size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+.country-text {
+  color: var(--lightest);
+  max-width: 600px; /* Limit text width */
+}
+
+.country-text h1 {
+  font-family: 'Abril Fatface', sans-serif;
+  text-align: left; /* Align to the left */
+  color: var(--lightest);
+  margin-bottom: 10px;
+}
+.country p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.bucketlist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bucketlist-table th, .bucketlist-table td {
+  border: 1px solid var(--light);
+  padding: 8px;
+}
+
+.bucketlist-table th {
+  background-color: var(--mid);
+  text-align: left;
+}
+
+
+@media screen and (max-width: 768px) {
+  .country-container {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center content */
+  }
+
+  .country-image {
+    width: 50%; /* Adjust size for smaller screens */
+  }
+
+  .country-text {
+    text-align: center; /* Center text */
+  }
+}
