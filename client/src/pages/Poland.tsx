@@ -7,7 +7,7 @@ import PEntertainment from '../../assets/images/PolandEntertainment.jpg';
 import PFood from '../../assets/images/PolandFood.webp';
 
 //function to create the About Me section
-function PolandPage() {
+const PolandPage: React.FC = () => {
   return (
     <section className="country">
       

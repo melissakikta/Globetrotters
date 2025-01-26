@@ -1,17 +1,57 @@
-import pool from "../config/users_db";
+import { DataTypes, Model, Optional } from 'sequelize';
+import sequelize from './db'; // Import your Sequelize instance
 
-// Define a User interface for type safety
-interface User {
+// Define attributes for the User model
+interface UserAttributes {
   id: number;
   username: string;
   password: string;
 }
 
-export async function getUserByUserName(username: string): Promise<User | null> {
-  const result = await pool.query("SELECT * FROM users WHERE username = $1", [username]);
-  return result.rows[0] || null;
+// Define creation attributes (optional id for auto-incremented fields)
+type UserCreationAttributes = Optional<UserAttributes, 'id'>;
+
+// Extend Sequelize's Model class
+class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+  public id!: number;
+  public username!: string;
+  public password!: string;
+
+  // Static method to create a new user
+  public static async createUser(username: string, password: string): Promise<User> {
+    return await User.create({ username, password });
+  }
+
+  // Static method to get a user by username
+  public static async getUserByUserName(username: string): Promise<User | null> {
+    return await User.findOne({ where: { username } });
+  }
 }
 
-export async function createUser(username: string, hashedPassword: string): Promise<void> {
-  await pool.query("INSERT INTO users (username, password) VALUES ($1, $2)", [username, hashedPassword]);
-}
+// Initialize the model
+User.init(
+  {
+    id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize, // Your Sequelize instance
+    modelName: 'User',
+    tableName: 'users',
+    timestamps: true, // Enable createdAt and updatedAt
+  }
+);
+
+export default User;

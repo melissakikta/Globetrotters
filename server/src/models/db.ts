@@ -1,15 +1,24 @@
 import { Sequelize } from "sequelize";
 
+// Validate environment variables
+const { DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT } = process.env;
+
+if (!DB_NAME || !DB_USER || !DB_PASSWORD || !DB_HOST) {
+  throw new Error(
+    "Missing required environment variables: DB_NAME, DB_USER, DB_PASSWORD, or DB_HOST"
+  );
+}
+
 // Create a new Sequelize instance
-const db = new Sequelize(process.env.DB_NAME || "database", process.env.DB_USER || "user", process.env.DB_PASSWORD || "password", {
-  host: process.env.DB_HOST || "localhost",
-  port: Number(process.env.DB_PORT) || 5432, // Use 3306 for MySQL or 5432 for PostgreSQL
-  dialect: "postgres", // Change to 'mysql' if using MySQL
-  logging: false,
+const db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+  host: DB_HOST,
+  port: Number(DB_PORT) || 5432, // Default to PostgreSQL's port
+  dialect: "postgres", // Specify your database type
+  logging: false, // Disable query logging
 });
 
-// Test the connection
-const connectDB = async () => {
+// Test the connection (optional but recommended)
+export const connectDB = async () => {
   try {
     await db.authenticate();
     console.log("Database connected successfully!");
@@ -19,7 +28,5 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
-
-// Export the sequelize instance
+// Export the Sequelize instance
 export default db;

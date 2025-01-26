@@ -1,19 +1,17 @@
 import React from 'react';
 import '../styles/Country.css';
 
-//Import images
-
+// Import images
 import EEntertainment from '../../assets/images/EnglandEntertainment.jpg';
 import EFood from '../../assets/images/EnglandFood.avif';
 
-//function to create the About Me section
-function EnglandPage() {
+// Function to create the EnglandPage section
+const EnglandPage: React.FC = () => {
   return (
     <section className="country">
-      
       {/* Info and activities link */}
       <div className="country-container">
-      {/* Add an image of country */}
+        {/* Add an image of country */}
         <img 
           src={EEntertainment}
           alt="Big Ben"
@@ -27,16 +25,16 @@ function EnglandPage() {
             British Monarchs, Shakespeare, and the Beatles are just a few of the things that make England a must-see destination!
           </p>
           <p>
-          <a href="https://www.tripadvisor.com/Attractions-g186217-Activities-England.html" target="_blank" rel="noopener noreferrer">
-            Things to Do in England   
-          </a>
+            <a href="https://www.tripadvisor.com/Attractions-g186217-Activities-England.html" target="_blank" rel="noopener noreferrer">
+              Things to Do in England   
+            </a>
           </p>
         </div>
       </div>
 
       {/* Info and activities link */}
       <div className="country-container">
-      {/* Add an image of country */}
+        {/* Add an image of country */}
         <img 
           src={EFood}
           alt="English Food"
@@ -50,14 +48,15 @@ function EnglandPage() {
             Try something new at these great eateries!
           </p>
           <p>
-          <a href="https://www.visitbritain.com/en/things-to-do/food-and-drink" target="_blank" rel="noopener noreferrer">
-            Great Britain Food and Drink    
-          </a>
+            <a href="https://www.visitbritain.com/en/things-to-do/food-and-drink" target="_blank" rel="noopener noreferrer">
+              Great Britain Food and Drink    
+            </a>
           </p>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default EnglandPage;
+

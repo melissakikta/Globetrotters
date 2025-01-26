@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { login } from "../utils/authService";
 
 const LoginPage: React.FC = () => {
-  const [username, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
+  const [username, setUserName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [token, setToken] = useState<string>("");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,7 +14,11 @@ const LoginPage: React.FC = () => {
       alert("Login successful!");
       localStorage.setItem("authToken", userToken); // Store token for future use
     } catch (error) {
-      alert("Error during login: " + error.message);
+      if (error instanceof Error) {
+        alert("Error during login: " + error.message);
+      } else {
+        alert("An unknown error occurred during login.");
+      }
     }
   };
 

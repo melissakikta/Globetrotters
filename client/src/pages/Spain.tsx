@@ -7,7 +7,7 @@ import SEntertainment from '../../assets/images/SpainEntertainment.jpg';
 import SFood from '../../assets/images/SpainFood.webp';
 
 //function to create the About Me section
-function SpainPage() {
+const SpainPage: React.FC = () => {
   return (
     <section className="country">
       

@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
@@ -12,7 +11,7 @@ import GermanyPage from './pages/Germany';
 import PolandPage from './pages/Poland';
 import SpainPage from './pages/Spain';
 import CurrencyExchangePage from './pages/Exchange';
-import Bucketlist from './pages/Bucketlist';
+import Bucketlist from './pages/BucketList';
 
 const router = createBrowserRouter([
   {
