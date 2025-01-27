@@ -62,7 +62,7 @@ const GermanyPage: React.FC = () => {
       <div className="country-container">
         {/* Add an image of country */}
         <img
-          src= {GFood} 
+          src={GFood} 
           alt="German Food"
           className="country-image"
         />
