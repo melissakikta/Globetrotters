@@ -1,9 +1,9 @@
 import "../styles/Country.css";
 
 // Import images
-import "../../assets/images/GermanyEntertainment.webp";
-import "../../assets/images/GermanyGermanyFood.png";
-import "../../assets/images/gm-train.jpeg";
+import GEntertainment from "../../assets/images/GermanyEntertainment.webp";
+import GFood from "../../assets/images/GermanyGermanyFood.png";
+import GTrain from "../../assets/images/gm-train.jpeg";
 
 import React, { useState, useEffect } from "react";
 import { TrainSchedulesService, TrainSchedule } from "../../../server/src/models/TrainTimes";
@@ -39,7 +39,7 @@ const GermanyPage: React.FC = () => {
       <div className="country-container">
         {/* Add an image of country */}
         <img
-          src="../assets/images/GermanyEntertainment.webp"
+          src={GEntertainment} 
           alt="Germany City Street"
           className="country-image"
         />
@@ -62,7 +62,7 @@ const GermanyPage: React.FC = () => {
       <div className="country-container">
         {/* Add an image of country */}
         <img
-          src="../assets/images/GermanyGermanyFood.png"
+          src= {GFood} 
           alt="German Food"
           className="country-image"
         />
@@ -85,7 +85,7 @@ const GermanyPage: React.FC = () => {
       <div className="country-container">
         {/* Add an image of country */}
         <img
-          src="../assets/images/gm-train.jpeg"
+          src= {GTrain} 
           alt="German train"
           className="country-image"
         />
