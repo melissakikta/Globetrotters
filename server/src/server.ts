@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { CurrencyExchangeService } from "./models/CurrecyExchage";
+import { CurrencyExchangeService } from "./models/CurrencyExchage";
 
 const exchangeService = new CurrencyExchangeService();
 
