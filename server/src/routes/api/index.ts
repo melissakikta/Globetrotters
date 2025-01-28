@@ -1,10 +1,9 @@
-import { Router } from 'express';
-import { ticketRouter } from './ticket-routes.js';
-import { userRouter } from './user-routes.js';
+import { Router } from "express";
+import currencyRoutes from "./currencyRoutes.js";
 
 const router = Router();
 
-router.use('/tickets', ticketRouter);
-router.use('/users', userRouter);
+// Mount currency exchange routes
+router.use("/currency", currencyRoutes);
 
 export default router;
