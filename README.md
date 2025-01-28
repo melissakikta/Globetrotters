@@ -72,8 +72,10 @@ Back to [Table-of-Contents](#🚀-table-of-contents)
 
 ## 🗨️ Contact Our Team
 
-  <strong>Email Ivan:</strong> []()
+  <strong>Email Ivan:</strong> [adroverivan7@gmail.com](mailto:adroverivan7@gmail.com)
+
   <strong>Email Missy:</strong> [MelissaKikta2025@u.northwestern.edu](mailto:MelissaKikta@u.northwestern.edu)
-  <strong>Email Paige:</strong> []()
+
+  <strong>Email Paige:</strong> [paigeafeldmann@gmail.com](mailto:paigeafeldmann@gmail.com)
 
 Back to [Table-of-Contents](#🚀-table-of-contents)
