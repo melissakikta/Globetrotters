@@ -1,12 +1,12 @@
 import "../styles/Country.css";
 
 // Import images
-import GEntertainment from "../../assets/images/GermanyEntertainment.webp";
-import GFood from "../../assets/images/GermanyGermanyFood.png";
-import GTrain from "../../assets/images/gm-train.jpeg";
+import GEntertainment from "../assets/images/GermanyEntertainment.webp";
+import GFood from "../assets/images/GermanyFood.png";
+import GTrain from "../assets/images/gm-train.jpeg";
 
 import React, { useState, useEffect } from "react";
-import { TrainSchedulesService, TrainSchedule } from "../../../server/src/models/TrainTimes";
+import { TrainSchedulesService, TrainSchedule } from "../utils/TrainTimes.js";
 
 // Function to create the About Me section
 const GermanyPage: React.FC = () => {

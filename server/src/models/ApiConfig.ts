@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 export interface ApiConfig {
     apiKey: string;
     baseUrl: string;
@@ -5,7 +8,7 @@ export interface ApiConfig {
   
   export const apiConfig: ApiConfig = {
     apiKey: process.env.API_KEY || "your-default-api-key",
-    baseUrl: "https://v6.exchangerate-api.com/"
+    baseUrl: process.env.API_BASE_URL || "https://api.exchangeratesapi.io",
   };
   
   

@@ -1,18 +1,22 @@
+import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
+import { registerUser } from "./controllers/userController.js";
+
 dotenv.config();
 
-import { CurrencyExchangeService } from "./models/CurrencyExchage";
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-const exchangeService = new CurrencyExchangeService();
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-(async () => {
-  try {
-    const rates = await exchangeService.fetchExchangeRates("EUR");
-    console.log("Exchange Rates:", rates);
+// Routes
+app.post("/register", registerUser);
+app.use(routes);
 
-    const convertedAmount = await exchangeService.convertAmount("EUR", "USD", 100);
-    console.log(`Converted Amount: $${convertedAmount}`);
-  } catch (error) {
-    console.error(error);
-  }
-})();
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

@@ -2,8 +2,8 @@ import React from 'react';
 import '../styles/Country.css';
 
 // Import images
-import EEntertainment from '../../assets/images/EnglandEntertainment.jpg';
-import EFood from '../../assets/images/EnglandFood.avif';
+import EEntertainment from '../assets/images/EnglandEntertainment.jpg';
+import EFood from '../assets/images/EnglandFood.avif';
 
 // Function to create the EnglandPage section
 const EnglandPage: React.FC = () => {

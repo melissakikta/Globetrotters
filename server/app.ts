@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { registerUser } from "./src/controllers/userController";
 
 dotenv.config();
+console.log('Hello World');
 
 const app = express();
 const PORT = process.env.PORT || 5000;

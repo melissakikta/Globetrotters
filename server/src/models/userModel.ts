@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import sequelize from './db'; // Import your Sequelize instance
+import sequelize from './db.js'; // Import your Sequelize instance
 
 // Define attributes for the User model
 interface UserAttributes {

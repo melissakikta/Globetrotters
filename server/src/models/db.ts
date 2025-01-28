@@ -1,9 +1,11 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
+dotenv.config(); // Import the dotenv module
 
 // Validate environment variables
-const { DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT } = process.env;
+const { DB_NAME, DB_USER, DB_PASSWORD } = process.env;
 
-if (!DB_NAME || !DB_USER || !DB_PASSWORD || !DB_HOST) {
+if (!DB_NAME || !DB_USER || !DB_PASSWORD ) {
   throw new Error(
     "Missing required environment variables: DB_NAME, DB_USER, DB_PASSWORD, or DB_HOST"
   );
@@ -11,8 +13,8 @@ if (!DB_NAME || !DB_USER || !DB_PASSWORD || !DB_HOST) {
 
 // Create a new Sequelize instance
 const db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  host: DB_HOST,
-  port: Number(DB_PORT) || 5432, // Default to PostgreSQL's port
+  host: 'localhost', // Default to localhost
+  port: 5432, // Default to PostgreSQL's port
   dialect: "postgres", // Specify your database type
   logging: false, // Disable query logging
 });

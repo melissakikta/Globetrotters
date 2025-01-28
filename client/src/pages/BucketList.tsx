@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import bucketListImage from "../../assets/images/bucketlist.jpeg";
+import bucketListImage from "../assets/images/bucketlist.jpeg";
 import "../styles/BucketList.css";
 
 const BucketList: React.FC = () => {

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
 import '../styles/Country.css';
 // Import images
-import exchangeImg1 from '../../assets/images/exchange.jpeg';
-import exchangeImg2 from '../../assets/images/exchange2.png';
+import exchangeImg1 from '../assets/images/exchange.jpeg';
+import exchangeImg2 from '../assets/images/exchange2.png';
 // Import service
-import { CurrencyExchangeService } from '../../../server/src/models/CurrencyExchage' // Ensure this path is correct
+import { CurrencyExchangeService } from '../../../server/src/models/CurrencyExchange' // Ensure this path is correct
 
 const CurrencyExchangePage: React.FC = () => {
   const [baseCurrency, setBaseCurrency] = useState<string>("EUR");
@@ -20,7 +20,7 @@ const CurrencyExchangePage: React.FC = () => {
     const fetchRates = async () => {
       try {
         const response = await exchangeService.fetchExchangeRates(baseCurrency);
-        setRates(response.rates);
+        setRates(response.conversion_rates);
         setError(null);
       } catch {
         setError("Failed to fetch exchange rates.");

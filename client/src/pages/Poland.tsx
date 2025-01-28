@@ -3,8 +3,8 @@ import React from 'react';
 import '../styles/Country.css';
 
 //Import images
-import PEntertainment from '../../assets/images/PolandEntertainment.jpg';
-import PFood from '../../assets/images/PolandFood.webp';
+import PEntertainment from '../assets/images/PolandEntertainment.jpg';
+import PFood from '../assets/images/PolandFood.webp';
 
 //function to create the About Me section
 const PolandPage: React.FC = () => {
