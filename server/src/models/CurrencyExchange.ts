@@ -1,12 +1,10 @@
 import axios from "axios";
-import { apiConfig } from "./ApiConfig";
-import dotenv from "dotenv";
-dotenv.config();
+import { apiConfig } from "./ApiConfig.js";
 
 export interface ExchangeRateResponse {
   base: string; 
   date: string; 
-  rates: { [currency: string]: number }; 
+  conversion_rates: { [currency: string]: number }; 
 }
 
 
@@ -22,12 +20,7 @@ export class CurrencyExchangeService {
 
   async fetchExchangeRates(baseCurrency: string): Promise<ExchangeRateResponse> {
     try {
-      const response = await axios.get<ExchangeRateResponse>(`${this.baseUrl}/latest`, {
-        params: {
-          access_key: this.apiKey,
-          base: baseCurrency,
-        },
-      });
+      const response = await axios.get<ExchangeRateResponse>(`${this.baseUrl}/${this.apiKey}/latest/${baseCurrency}`);
       return response.data;
     } catch (error) {
       console.error("Error fetching exchange rates:", error);
@@ -41,8 +34,10 @@ export class CurrencyExchangeService {
     targetCurrency: string,
     amount: number
   ): Promise<number> {
+    // console.log(baseCurrency, targetCurrency, amount)
     const exchangeRates = await this.fetchExchangeRates(baseCurrency);
-    const rate = exchangeRates.rates[targetCurrency];
+    // console.log(exchangeRates);
+    const rate = exchangeRates.conversion_rates[targetCurrency];
 
     if (!rate) {
       throw new Error(`Exchange rate not available for ${targetCurrency}`);

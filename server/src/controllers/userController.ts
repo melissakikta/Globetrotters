@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import User from "../models/userModel"; // Make sure these functions are typed in your userModel.ts
+import User from "../models/userModel.js"; // Make sure these functions are typed in your userModel.ts
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 

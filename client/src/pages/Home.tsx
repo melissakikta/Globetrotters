@@ -2,11 +2,11 @@ import React from 'react';
 
 import '../styles/Home.css';
 
-import country1 from '../../assets/images/uk-flag.gif';
-import country2 from '../../assets/images/fr-flag.gif';
-import country3 from '../../assets/images/gm-flag.gif';
-import country4 from '../../assets/images/pl-flag.gif';
-import country5 from '../../assets/images/sp-flag.gif';
+import country1 from '../assets/images/uk-flag.gif';
+import country2 from '../assets/images/fr-flag.gif';
+import country3 from '../assets/images/gm-flag.gif';
+import country4 from '../assets/images/pl-flag.gif';
+import country5 from '../assets/images/sp-flag.gif';
 
 
 //function to create the About Me section
