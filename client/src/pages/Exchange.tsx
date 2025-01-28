@@ -3,41 +3,72 @@ import '../styles/Country.css';
 // Import images
 import exchangeImg1 from '../assets/images/exchange.jpeg';
 import exchangeImg2 from '../assets/images/exchange2.png';
-// Import service
-import { CurrencyExchangeService } from '../../../server/src/models/CurrencyExchange' // Ensure this path is correct
+
+import { fetchExchangeRates, convertAmount } from "../utils/currencyExchange";
 
 const CurrencyExchangePage: React.FC = () => {
-  const [baseCurrency, setBaseCurrency] = useState<string>("EUR");
-  const [targetCurrency, setTargetCurrency] = useState<string>("USD");
-  const [amount, setAmount] = useState<number>(1);
+  const [baseCurrency, setBaseCurrency] = useState("USD");
+  const [targetCurrency, setTargetCurrency] = useState("EUR");
+  const [amount, setAmount] = useState(1);
   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
-  const [rates, setRates] = useState<{ [key: string]: number } | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  const exchangeService = useMemo(() => new CurrencyExchangeService(), []);
+  const [exchangeRates, setExchangeRates] = useState<any>(null);
 
   useEffect(() => {
-    const fetchRates = async () => {
+    const getRates = async () => {
       try {
-        const response = await exchangeService.fetchExchangeRates(baseCurrency);
-        setRates(response.conversion_rates);
-        setError(null);
-      } catch {
-        setError("Failed to fetch exchange rates.");
+        const rates = await fetchExchangeRates(baseCurrency);
+        setExchangeRates(rates);
+      } catch (error) {
+        console.error(error);
       }
     };
-    fetchRates();
-  }, [baseCurrency, exchangeService]);
+
+    getRates();
+  }, [baseCurrency]);
 
   const handleConvert = async () => {
     try {
-      const result = await exchangeService.convertAmount(baseCurrency, targetCurrency, amount);
+      const result = await convertAmount(baseCurrency, targetCurrency, amount);
       setConvertedAmount(result);
-      setError(null);
-    } catch {
-      setError("Conversion failed. Please try again.");
+    } catch (error) {
+      console.error(error);
     }
   };
+// Import service
+// import { fetchExchangeRates } from '../utils/currencyExchange.js' // Ensure this path is correct
+
+// const CurrencyExchangePage: React.FC = () => {
+//   const [baseCurrency, setBaseCurrency] = useState<string>("EUR");
+//   const [targetCurrency, setTargetCurrency] = useState<string>("USD");
+//   const [amount, setAmount] = useState<number>(1);
+//   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
+//   const [rates, setRates] = useState<{ [key: string]: number } | null>(null);
+//   const [error, setError] = useState<string | null>(null);
+
+//   const exchangeService = useMemo(() => new fetchExchangeRates (), []);
+
+//   useEffect(() => {
+//     const fetchRates = async () => {
+//       try {
+//         const response = await exchangeService.fetchExchangeRates(baseCurrency);
+//         setRates(response.conversion_rates);
+//         setError(null);
+//       } catch {
+//         setError("Failed to fetch exchange rates.");
+//       }
+//     };
+//     fetchRates();
+//   }, [baseCurrency, exchangeService]);
+
+//   const handleConvert = async () => {
+//     try {
+//       const result = await exchangeService.convertAmount(baseCurrency, targetCurrency, amount);
+//       setConvertedAmount(result);
+//       setError(null);
+//     } catch {
+//       setError("Conversion failed. Please try again.");
+//     }
+//   };
 
   return (
     <section className="country">
