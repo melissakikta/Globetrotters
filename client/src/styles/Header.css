@@ -19,7 +19,7 @@
   margin: 0;                  /* Remove default margin */
   box-sizing: border-box;  
   background-color: var(--light); /* Background color */
-  color: var(--lightest);            /* Text color */
+  color: var(--dark);            /* Text color */
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +49,7 @@
     margin: 0;                  /* Remove default margin */
     box-sizing: border-box;  
     background-color: var(--light); /* Background color */
-    color: var(--lightest);            /* Text color */
+    color: var(--dark);            /* Text color */
     position: fixed;
     top: 0;
     left: 0;

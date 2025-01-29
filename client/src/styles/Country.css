@@ -35,14 +35,14 @@
 }
 
 .country-text {
-  color: var(--lightest);
+  color: var(--dark);
   max-width: 600px; /* Limit text width */
 }
 
 .country-text h1 {
   font-family: 'Abril Fatface', sans-serif;
   text-align: left; /* Align to the left */
-  color: var(--lightest);
+  color: var(--dark);
   margin-bottom: 10px;
 }
 .country p {
