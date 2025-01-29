@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { registerUser } from "./controllers/userController.js";
 import routes from "./routes/index.js";
+import db from "./models/db.js";
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ app.post("/register", registerUser);
 app.use(routes);
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+db.sync({force: false}).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
 });
