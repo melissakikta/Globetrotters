@@ -5,6 +5,8 @@ Come See the World with Us!!!
 ## 📚 Description
 This application will provide a space where users can find fun activities and places to enjoy local cuisine in European countries. Users can register to create a space to save their Bucket List for travel inspirations. 
 
+[Live Link](https://globetrotters-j0kf.onrender.com)
+
 ## 🚀 Table of Contents
   * [Usage](#📝-Usage)
   * [Features](#⭐-features)
