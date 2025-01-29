@@ -9,7 +9,7 @@
 .home {
   padding-top: 140px; /* Accounts for fixed header and navbar height */
   padding-bottom: 60px; /* Accounts for footer height */
-  background: var(--background);
+  background: var(--dark);
   justify-content: center;
   text-align: center; /* Centers the title */
   font-family: lato, sans-serif;
