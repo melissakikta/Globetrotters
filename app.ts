@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { registerUser } from "./src/controllers/userController";
+import userRoutes from './server/src/routes/api/userRoutes';
+// import { registerUser } from "./server/src/controllers/userController";
 
 dotenv.config();
-console.log('Hello World');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.post("/register", registerUser);
+app.post("/api/users", userRoutes);
 
 // Start the server
 app.listen(PORT, () => {

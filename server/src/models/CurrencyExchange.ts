@@ -21,6 +21,10 @@ export class CurrencyExchangeService {
   async fetchExchangeRates(baseCurrency: string): Promise<ExchangeRateResponse> {
     try {
       const response = await axios.get<ExchangeRateResponse>(`${this.baseUrl}/${this.apiKey}/latest/${baseCurrency}`);
+      
+      const conversion_rates = response.data.conversion_rates;  
+      if (!conversion_rates) {throw new Error("No conversion rates found");}
+      
       return response.data;
     } catch (error) {
       console.error("Error fetching exchange rates:", error);

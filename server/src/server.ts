@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { registerUser } from "./controllers/userController.js";
+import routes from "./routes/index.js";
 
 dotenv.config();
 

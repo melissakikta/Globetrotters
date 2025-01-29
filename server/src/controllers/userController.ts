@@ -8,9 +8,9 @@ const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key";
 
 // Register a user
 export async function registerUser(req: Request, res: Response): Promise<void> {
-  const { username, password } = req.body;
-
+  
   try {
+    const { username, password } = req.body;
     // Check if the user already exists
     const existingUser = await User.getUserByUserName(username);
     if (existingUser) {

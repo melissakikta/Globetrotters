@@ -4,12 +4,8 @@ import '../styles/Country.css';
 import exchangeImg1 from '../assets/images/exchange.jpeg';
 import exchangeImg2 from '../assets/images/exchange2.png';
 
-import { fetchExchangeRates, convertAmount } from "../utils/currencyExchange";
+import { fetchExchangeRates, convertAmount, ExchangeRateResponse } from "../utils/currencyExchange";
 
-interface ExchangeRateResponse {
-  rates: Record<string, number>;
-  [key: string]: unknown; // Other possible properties
-}
 
 const CurrencyExchangePage: React.FC = () => {
   const [baseCurrency, setBaseCurrency] = useState("USD");
@@ -23,7 +19,7 @@ const CurrencyExchangePage: React.FC = () => {
     const getRates = async () => {
       try {
         const response: ExchangeRateResponse = await fetchExchangeRates(baseCurrency);
-        setExchangeRates(response.rates); // Use only the rates property
+        setExchangeRates(response.conversion_rates); // Use only the rates property
       } catch (error) {
         console.error(error);
         setError("Failed to fetch exchange rates.");
