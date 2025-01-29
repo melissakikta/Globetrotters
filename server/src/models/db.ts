@@ -3,21 +3,21 @@ import dotenv from "dotenv";
 dotenv.config(); // Import the dotenv module
 
 // Validate environment variables
-const { DB_NAME, DB_USER, DB_PASSWORD } = process.env;
+const db = process.env.DB_URL
+  ? new Sequelize(process.env.DB_URL)
+  : new Sequelize(
+      process.env.DB_NAME || '',
+      process.env.DB_USER || '',
+      process.env.DB_PASSWORD,
+      {
+        host: 'localhost',
+        dialect: 'postgres',
+        dialectOptions: {
+          decimalNumbers: true,
+        },
+      }
+    );
 
-if (!DB_NAME || !DB_USER || !DB_PASSWORD ) {
-  throw new Error(
-    "Missing required environment variables: DB_NAME, DB_USER, DB_PASSWORD, or DB_HOST"
-  );
-}
-
-// Create a new Sequelize instance
-const db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  host: 'localhost', // Default to localhost
-  port: 5432, // Default to PostgreSQL's port
-  dialect: "postgres", // Specify your database type
-  logging: false, // Disable query logging
-});
 
 // Test the connection (optional but recommended)
 export const connectDB = async () => {
