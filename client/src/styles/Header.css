@@ -32,7 +32,7 @@
   font-family: 'Abril Fatface', sans-serif;
   font-size: 4rem;          /* Font size */
   margin: 20px;                  /* Remove default margin */
-  color: var(--lightest);             /* Text color */
+  color: var(--dark);             /* Text color */
 }
 
 /* mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */

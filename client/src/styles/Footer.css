@@ -35,7 +35,8 @@
   gap: 20px;                /* Space between links */
   list-style: none;         /* Remove bullet points */
   padding: 0;               /* Remove padding */
-  margin: 0;                /* Remove margin */
+  margin: 0; 
+  color: var(--lightest)               /* Remove margin */
 }
 
 .footer-links h2 {

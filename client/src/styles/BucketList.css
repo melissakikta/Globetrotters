@@ -13,7 +13,7 @@
 }
 
 .country {
-  background: var(--background);
+  background: var(--dark);
   padding: 20px;
   margin-top: 140px; /* Accounts for the header and navbar height */
   margin-bottom: 60px; /* Accounts for the footer height */
@@ -62,7 +62,7 @@
 }
 
 .bucketlist-table th {
-  background-color: var(--mid);
+  background-color: var(--dark);
   text-align: left;
 }
 
