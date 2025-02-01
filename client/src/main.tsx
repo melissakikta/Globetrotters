@@ -24,31 +24,31 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/England',
+        path: 'England',
         element: <EnglandPage />,
       },
       {
-        path: '/France',
+        path: 'France',
         element: <FrancePage />,
       },
       {
-        path: '/Germany',
+        path: 'Germany',
         element: <GermanyPage />,
       },
       {
-        path: '/Poland',
+        path: 'Poland',
         element: <PolandPage />,
       },
       {
-        path: '/Spain',
+        path: 'Spain',
         element: <SpainPage />,
       },
       {
-        path: '/Exchange',
+        path: 'Exchange',
         element: <CurrencyExchangePage />,
       },
       {
-        path: '/Bucketlist',
+        path: 'Bucketlist',
         element: <Bucketlist />,
       },
     ],

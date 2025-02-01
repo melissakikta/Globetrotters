@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Header />
       <Navbar />
       <main className='container container-fluid mt-5'>
-        <Outlet />
+        <Outlet /> {/* This is where the page will be displayed */}
       </main>
       <Footer />
     </div>

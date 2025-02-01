@@ -1,33 +1,30 @@
 // Import navbar style sheet
 import '../styles/Navbar.css';
-import React, { useState } from 'react';
-import NavTabs from './NavTabs';
-
-import Home from '../pages/Home';
-import ExchangePage from '../pages/Exchange';
-import Bucketlist from '../pages/BucketList';
+import React from 'react';
+import {NavLink } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<string>('Home');
-
-  const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    } else if (currentPage === 'Exchange') {
-      return <ExchangePage />;
-    } else {
-      return <Bucketlist />;
-    }
-  };
-
-  const handlePageChange = (page: string) => setCurrentPage(page);
-
   return (
-    <div>
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-      <main className="mx-3">{renderPage()}</main>
-    </div>
-  );
+    <nav>
+      <ul className="nav nav-tabs">
+        <li className="nav-item">
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            <h2>Home</h2>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/Exchange" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            <h2>Exchange Rates</h2>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/Bucketlist" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            <h2>Bucket List</h2>
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  )
 };
 
 export default Navbar;
