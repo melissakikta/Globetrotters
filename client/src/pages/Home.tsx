@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 
 import country1 from '../assets/images/uk-flag.gif';
@@ -17,47 +17,37 @@ const Home: React.FC = () => {
         <h1>Where would you like to start!</h1>
         <div className="flex-container">
           <div className="flex-item">
-            <img src={country1} alt="Employee Tracker" className="country-image" />
+            <img src={country1} alt="country flag" className="country-image" />
             <h2>
-              <a href="./England" target="_blank" rel="noopener noreferrer">
-                England
-              </a>
+              <Link to="/England">England</Link>
             </h2>
           </div>
 
           <div className="flex-item">
-            <img src={country2} alt="Weather Dashboard" className="country-image" />
+            <img src={country2} alt="country flag" className="country-image" />
             <h2>
-              <a href="./France" target="_blank" rel="noopener noreferrer">
-                France
-              </a>
+              <Link to="/France">France</Link>
             </h2>
           </div>
 
           <div className="flex-item">
-            <img src={country3} alt="Vehicle Builder" className="country-image" />
+            <img src={country3} alt="country flag" className="country-image" />
             <h2>
-              <a href="./Germany" target="_blank" rel="noopener noreferrer">
-                Germany
-              </a>
+              <Link to="/Germany">Germany</Link>
             </h2>
           </div>
 
           <div className="flex-item">
-            <img src={country4} alt="README Generator" className="country-image" />
+            <img src={country4} alt="country flag" className="country-image" />
             <h2>
-              <a href="./Poland" target="_blank" rel="noopener noreferrer">
-                Poland
-              </a>
+              <Link to="/Poland">Poland</Link>
             </h2>
           </div>
 
           <div className="flex-item">
-            <img src={country5} alt="Rescuers Down Under" className="country-image" />
+            <img src={country5} alt="country flag" className="country-image" />
             <h2>
-              <a href="./Spain" target="_blank" rel="noopener noreferrer">
-                Spain
-              </a>
+              <Link to="/Spain">Spain</Link>
             </h2>
           </div>
 
