@@ -13,7 +13,7 @@
 }
 
 .country {
-  background: var(--background);
+  background: var(--dark);
   padding: 20px;
   margin-top: 140px; /* Accounts for the header and navbar height */
   margin-bottom: 60px; /* Accounts for the footer height */
@@ -35,20 +35,24 @@
 }
 
 .country-text {
-  color: var(--dark);
+  color: var(--light);
   max-width: 600px; /* Limit text width */
 }
 
 .country-text h1 {
   font-family: 'Abril Fatface', sans-serif;
   text-align: left; /* Align to the left */
-  color: var(--dark);
+  color: var(--light);
   margin-bottom: 10px;
 }
 .country p {
   font-size: 1.5rem;
   line-height: 1.5;
   text-align: left;
+}
+
+.country a {
+  color: var(--light);
 }
 
 @media screen and (max-width: 768px) {
