@@ -41,7 +41,8 @@ export class TrainSchedulesService {
           duration: 60, // Fetch schedules for the next 60 minutes
         },
       });
-      return response.data.map((item: { id: string; when: string; plannedWhen: string; line: { name: string; product: string }; stop: { id: string; name: string; location: { type: string; latitude: number; longitude: number } }; destination: { id: string; name: string; location: { type: string; latitude: number; longitude: number } } }) => ({
+      console.log(response);
+      return response.data.departures.map((item: { id: string; when: string; plannedWhen: string; line: { name: string; product: string }; stop: { id: string; name: string; location: { type: string; latitude: number; longitude: number } }; destination: { id: string; name: string; location: { type: string; latitude: number; longitude: number } } }) => ({
         trainId: item.id,
         departure: item.when,
         arrival: item.plannedWhen,

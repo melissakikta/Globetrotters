@@ -10,7 +10,7 @@ import { TrainSchedulesService, TrainSchedule } from "../utils/TrainTimes.js";
 
 // Function to create the About Me section
 const GermanyPage: React.FC = () => {
-  const [stationId, setStationId] = useState<string>("900000100001"); // Default station ID (e.g., Berlin Hauptbahnhof)
+  const [stationId, setStationId] = useState<string>("900003205"); // Default station ID (e.g., Berlin Hauptbahnhof)
   const [trainSchedules, setTrainSchedules] = useState<TrainSchedule[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
