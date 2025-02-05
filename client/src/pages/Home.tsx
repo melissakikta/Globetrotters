@@ -16,41 +16,30 @@ const Home: React.FC = () => {
       <div className="page-section">
         <h1>Where would you like to start!</h1>
         <div className="flex-container">
-          <div className="flex-item">
-            <img src={country1} alt="country flag" className="country-image" />
-            <h2>
-              <Link to="/England">England</Link>
-            </h2>
-          </div>
+          <Link to="/England" className="flex-item">
+            <img src={country1} alt="England flag" className="country-image" />
+            <h2>England</h2>
+          </Link>
 
-          <div className="flex-item">
-            <img src={country2} alt="country flag" className="country-image" />
-            <h2>
-              <Link to="/France">France</Link>
-            </h2>
-          </div>
+          <Link to="/France" className="flex-item">
+            <img src={country2} alt="France flag" className="country-image" />
+            <h2>France</h2>
+          </Link>
 
-          <div className="flex-item">
-            <img src={country3} alt="country flag" className="country-image" />
-            <h2>
-              <Link to="/Germany">Germany</Link>
-            </h2>
-          </div>
+          <Link to="/Germany" className="flex-item">
+            <img src={country3} alt="Germany flag" className="country-image" />
+            <h2>Germany</h2>
+          </Link>
 
-          <div className="flex-item">
-            <img src={country4} alt="country flag" className="country-image" />
-            <h2>
-              <Link to="/Poland">Poland</Link>
-            </h2>
-          </div>
+          <Link to="/Poland" className="flex-item">
+            <img src={country4} alt="Poland flag" className="country-image" />
+            <h2>Poland</h2>
+          </Link>
 
-          <div className="flex-item">
-            <img src={country5} alt="country flag" className="country-image" />
-            <h2>
-              <Link to="/Spain">Spain</Link>
-            </h2>
-          </div>
-
+          <Link to="/Spain" className="flex-item">
+            <img src={country5} alt="Spain flag" className="country-image" />
+            <h2>Spain</h2>
+          </Link>
         </div>
       </div>
     </section>

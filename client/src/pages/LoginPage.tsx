@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../utils/authService";
+import '../styles/Home.css';
 
 const LoginPage: React.FC = () => {
   const [username, setUserName] = useState<string>("");
@@ -23,7 +24,7 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="home">
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <input

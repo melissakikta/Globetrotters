@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { register } from "../utils/authService";
+import '../styles/Home.css';
 
 const RegisterPage: React.FC = () => {
   const [username, setUserName] = useState<string>("");
@@ -20,7 +21,7 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="home">
       <h1>Register</h1>
       <form onSubmit={handleRegister}>
         <input

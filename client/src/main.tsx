@@ -12,6 +12,8 @@ import PolandPage from './pages/Poland';
 import SpainPage from './pages/Spain';
 import CurrencyExchangePage from './pages/Exchange';
 import Bucketlist from './pages/BucketList';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 const router = createBrowserRouter([
   {
@@ -24,33 +26,42 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'England',
+        path: '/England',
         element: <EnglandPage />,
       },
       {
-        path: 'France',
+        path: '/France',
         element: <FrancePage />,
       },
       {
-        path: 'Germany',
+        path: '/Germany',
         element: <GermanyPage />,
       },
       {
-        path: 'Poland',
+        path: '/Poland',
         element: <PolandPage />,
       },
       {
-        path: 'Spain',
+        path: '/Spain',
         element: <SpainPage />,
       },
       {
-        path: 'Exchange',
+        path: '/Exchange',
         element: <CurrencyExchangePage />,
       },
       {
-        path: 'Bucketlist',
+        path: '/Bucketlist',
         element: <Bucketlist />,
       },
+      {
+        path: '/Login',
+        element: <LoginPage />,
+      },
+      {
+        path: '/Register',
+        element: <RegisterPage />,
+      },
+
     ],
   },
 ]);
