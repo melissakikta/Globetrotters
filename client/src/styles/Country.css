@@ -55,6 +55,55 @@
   color: var(--light);
 }
 
+.train-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.train-table th, .train-table td {
+  border: 1px solid var(--dark);
+  padding: 8px;
+  text-align: left;
+}
+
+.train-table th {
+  background-color: var(--lightest);
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.regional-train {
+  background-color: #f0d9ff; /* Light Purple */
+  color: var(--dark);
+}
+
+.suburban-train {
+  background-color: #d0f0c0; /* Light Green */
+  color: var(--dark);
+}
+
+.subway {
+  background-color: #ffcccb; /* Light Red */
+  color: var(--dark);
+}
+
+.tram {
+  background-color: #cce7ff; /* Light Blue */
+  color: var(--dark);
+}
+
+.bus {
+  background-color: #fff5cc; /* Light Yellow */
+  color: var(--dark);
+}
+
+.default-train {
+  background-color: #f9f9f9;
+  color: var(--dark);
+}
+
+
 @media screen and (max-width: 768px) {
   .country-container {
     flex-direction: column; /* Stack image and text vertically */

@@ -33,6 +33,24 @@ const GermanyPage: React.FC = () => {
     fetchSchedules();
   }, [stationId]);
 
+  // Function to get CSS class based on transport type
+  const getTransportClass = (type: string) => {
+    switch (type.toLowerCase()) {
+      case "regional":
+        return "regional-train";
+      case "suburban":
+        return "suburban-train";
+      case "subway":
+        return "subway";
+      case "tram":
+        return "tram";
+      case "bus":
+        return "bus";
+      default:
+        return "default-train";
+    }
+  };
+
   return (
     <section className="country">
       {/* Info and activities link */}
@@ -121,20 +139,33 @@ const GermanyPage: React.FC = () => {
 
           {/* Train Schedule List */}
           <div>
-            <h2>Departures</h2>
-            {trainSchedules.length > 0 ? (
-              <ul>
+          <h2>Departures</h2>
+          {trainSchedules.length > 0 ? (
+            <table className="train-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Line</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Arrival</th>
+                </tr>
+              </thead>
+              <tbody>
                 {trainSchedules.map((schedule, index) => (
-                  <li key={index}>
-                    Train {schedule.line.name} ({schedule.line.product}) - Departure:{" "}
-                    {new Date(schedule.departure).toLocaleTimeString()} from {schedule.origin.name} to{" "}
-                    {schedule.destination.name} (Arrives: {new Date(schedule.arrival).toLocaleTimeString()})
-                  </li>
+                  <tr key={index} className={getTransportClass(schedule.line.product)}>
+                    <td>{new Date(schedule.departure).toLocaleTimeString()}</td>
+                    <td>{schedule.line.name} ({schedule.line.product})</td>
+                    <td>{schedule.origin.name}</td>
+                    <td>{schedule.destination.name}</td>
+                    <td>{new Date(schedule.arrival).toLocaleTimeString()}</td>
+                  </tr>
                 ))}
-              </ul>
-            ) : (
-              !loading && <p>No schedules available.</p>
-            )}
+              </tbody>
+            </table>
+          ) : (
+            !loading && <p>No schedules available.</p>
+          )}
           </div>
         </div>
       </div>
