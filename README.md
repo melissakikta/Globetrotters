@@ -21,27 +21,27 @@ Users can select a country and navigate to a page for each country. Users can al
 
 <u><strong>Home Page</strong></u>
 
-![Navigation](./client/assets/images/globe.png)
+![Navigation](./client/src/assets/images/Home.png)
 
 
 <u><strong>Country Page</strong></u>
 
-![Portfolio](./assets/images/saved.png)
+![Portfolio](./client/src/assets/images/Country.png)
 
 
 <u><strong>Train Schedule API</strong></u>
 
-![Navigation](./assets/images/search.png)
+![Navigation](./client/src/assets/images/train_schedule.png)
 
 
 <u><strong>Exchange Rate</strong></u>
 
-![Navigation](./assets/images/search.png)
+![Navigation](./client/src/assets/images/exchange_rate_page.png)
 
 
 <u><strong>Bucket List form</strong></u>
 
-![Navigation](./assets/images/search.png)
+![Navigation](./client/src/assets/images/bucketlist_page.png)
 
 
 Back to [Table-of-Contents](#🚀-table-of-contents)

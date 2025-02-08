@@ -23,7 +23,7 @@ router.post("/convert", async (req, res) => {
 
   try {
     const convertedAmount = await currencyService.convertAmount(baseCurrency, targetCurrency, amount);
-    res.json(convertedAmount);
+    res.json({ convertedAmount });
   } catch (error: any) {
     console.error("Error converting currency:", error.message);
     res.status(500).json({ error: "Failed to convert currency." });

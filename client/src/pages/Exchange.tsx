@@ -11,14 +11,16 @@ const CurrencyExchangePage: React.FC = () => {
   const [baseCurrency, setBaseCurrency] = useState("USD");
   const [targetCurrency, setTargetCurrency] = useState("EUR");
   const [amount, setAmount] = useState(1);
-  const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
+  const [convertedAmount, setConvertedAmount] = useState<number | null>(0);
   const [exchangeRates, setExchangeRates] = useState<Record<string, number> | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  //filter data from tha API
   useEffect(() => {
     const getRates = async () => {
       try {
         const response: ExchangeRateResponse = await fetchExchangeRates(baseCurrency);
+        // create a filter for USD, EUR, Pound and create  if else for displaying just the ones we want.
         setExchangeRates(response.conversion_rates); // Use only the rates property
       } catch (error) {
         console.error(error);
@@ -31,7 +33,9 @@ const CurrencyExchangePage: React.FC = () => {
 
   const handleConvert = async () => {
     try {
+      console.log(`Converting ${amount} ${baseCurrency} to ${targetCurrency}`);
       const result = await convertAmount(baseCurrency, targetCurrency, amount);
+      console.log(`Converted amount: ${result}`);
       setConvertedAmount(result);
     } catch (error) {
       console.error(error);
@@ -48,7 +52,7 @@ const CurrencyExchangePage: React.FC = () => {
           <p>Traveling somewhere new? Check out the exchange rates before you go!</p>
           <h2>Exchange Rates</h2>
           {exchangeRates ? (
-            <table className="exchange-rates-table">
+            <table className="exchange-table">
               <thead>
                 <tr>
                   <th>Currency</th>
@@ -56,10 +60,12 @@ const CurrencyExchangePage: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(exchangeRates).map(([currency, rate]) => (
-                  <tr key={currency}>
-                    <td>{currency}</td>
-                    <td>{rate.toFixed(2)}</td>
+                {Object.entries(exchangeRates)
+                  .filter(([currency]) => currency === "USD" || currency === "EUR" || currency === "GBP") // Filter only USD, EUR, GBP
+                  .map(([currency, rate]) => (
+                    <tr key={currency}>
+                      <td>{currency}</td>
+                      <td>{rate.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
