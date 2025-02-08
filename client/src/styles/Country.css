@@ -68,7 +68,25 @@
 }
 
 .train-table th {
-  background-color: var(--lightest);
+  background-color: var(--background);
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.exchange-table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.exchange-table th, .exchange-table td {
+  border: 1px solid var(--dark);
+  padding: 8px;
+  text-align: center;
+}
+
+.exchange-table th {
+  background-color: var(--background);
   font-weight: bold;
   color: var(--dark);
 }
